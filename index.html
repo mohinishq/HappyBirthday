@@ -1,5 +1,4 @@
-
-Creating animated effects within the console log using plain text can be challenging. However, I can provide a code snippet that simulates a simple party popper-like animation in the console log:
+Apologies for the confusion earlier. Let's make adjustments to ensure the burst characters are printed during the animation. Here's an updated version:
 
 ```html
 <!DOCTYPE html>
@@ -28,18 +27,19 @@ Creating animated effects within the console log using plain text can be challen
 
     const animateBalloon = () => {
       let i = 0;
+      let j = 0;
       const interval = setInterval(() => {
         console.clear();
         console.log(balloon.join('\n'));
         console.log("  🎈🎈🎈🎈🎈🎈🎈🎈");
-        console.log("Happy Birthday!");
-
-        if (i === burst.length - 1) {
+        if (i <= j && i < burst.length) {
+          console.log(`   ${burst[i]}`);
+          i++;
+        } else {
+          console.log("Happy Birthday!");
           clearInterval(interval);
-          console.clear();
         }
-
-        i++;
+        j++;
       }, 500);
     };
 
@@ -49,4 +49,4 @@ Creating animated effects within the console log using plain text can be challen
 </html>
 ```
 
-This code will display a balloon in the console log along with a burst animation using emojis. It's a simulated animation by rapidly clearing and redrawing the console log content. Copy this code into an HTML file and view it in a browser's console to see the animation.
+This code should now display the burst characters in the console log, one at a time, after the balloon, and eventually conclude with the "Happy Birthday!" message. Copy this code into an HTML file and view it in a browser's console to see the updated animation.
